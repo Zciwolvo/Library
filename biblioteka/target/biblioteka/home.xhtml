@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+    	<h:outputStylesheet library="css" name="styles.css"  />
+    	
+    </h:head>
+
+    <h:body>
+      <h1>Biblioteka</h1>
+        <h:dataTable value = "#{userData.czytelnicy}" var = "c"
+                     styleClass = "czytelnikTable"
+                     headerClass = "czytelnikTableHeader"
+                     rowClasses = "czytelnikTableOddRow,czytelnikTableEvenRow">
+
+            <h:column><f:facet name = "header">ID</f:facet>
+                #{c.id}
+            </h:column>
+
+            <h:column><f:facet name = "header">Imie</f:facet>
+                #{c.imie}
+            </h:column>
+            <h:column><f:facet name = "header">Nazwisko</f:facet>
+                #{c.nazwisko}
+            </h:column>
+            <h:column><f:facet name = "header">Pesel</f:facet>
+                #{c.pesel}
+            </h:column>
+            <h:column><f:facet name = "header">Data_urodzenia</f:facet>
+                #{c.data_urodzenia}
+            </h:column>
+
+        </h:dataTable>
+      <h:dataTable value = "#{userData.ksiazki}" var = "k"
+         styleClass = "czytelnikTable"
+         headerClass = "czytelnikTableHeader"
+         rowClasses = "czytelnikTableOddRow,czytelnikTableEvenRow">
+
+          <h:column><f:facet name = "header">ID</f:facet>
+              #{k.id}
+          </h:column>
+         
+         <h:column><f:facet name = "header">Nazwa</f:facet>
+            #{k.nazwa}
+         </h:column>
+                  <h:column><f:facet name = "header">Opis</f:facet>
+            #{k.opis}
+         </h:column>
+                  <h:column><f:facet name = "header">Autor</f:facet>
+            #{k.autor}
+         </h:column>
+                  <h:column><f:facet name = "header">Wydawnictwo</f:facet>
+            #{k.wydawnictwo}
+         </h:column>
+          <h:column><f:facet name = "header">Data wydania</f:facet>
+              #{k.data_wydania}
+          </h:column>
+          <h:column><f:facet name = "header">Dostepnosc</f:facet>
+              #{k.dostepnosc}
+          </h:column>
+
+         
+      </h:dataTable>
+
+        <h:dataTable value = "#{userData.wypozyczenia}" var = "w"
+                     styleClass = "czytelnikTable"
+                     headerClass = "czytelnikTableHeader"
+                     rowClasses = "czytelnikTableOddRow,czytelnikTableEvenRow">
+
+            <h:column><f:facet name = "header">ID</f:facet>
+                #{w.id}
+            </h:column>
+
+            <h:column><f:facet name = "header">ID_czytelnika</f:facet>
+                #{w.id_czytelnika}
+            </h:column>
+            <h:column><f:facet name = "header">ID_ksiazki</f:facet>
+                #{w.id_ksiazki}
+            </h:column>
+            <h:column><f:facet name = "header">Data wypozyczenia</f:facet>
+                #{w.data_wypozyczenia}
+            </h:column>
+            <h:column><f:facet name = "header">Zwrot przewidywany</f:facet>
+                #{w.zwrot_przewidywany}
+            </h:column>
+            <h:column><f:facet name = "header">Zwrot rzeczywisty</f:facet>
+                #{w.zwrot_rzeczywisty}
+            </h:column>
+        </h:dataTable>
+      
+   </h:body>
+
+</html>
